@@ -24,7 +24,7 @@ class Student{
    //-----------save function-----------------//
    public function save(){
 	   
-	       $students=file(self::$file_path);  	   
+	      //  $students=file(self::$file_path);  	   
 	  	
 		   file_put_contents(self::$file_path,$this->csv(),FILE_APPEND);
 	   	   
@@ -42,13 +42,15 @@ class Student{
 		
 		echo "<b>ID | Name | COURSE | PHONE</b><br/>";
 		foreach($students as $student){
-				   list($id,$name,$course,$phone)=explode(",",trim($student));
+				   list($id,$name,$course,$phone)=explode(",",$student);
 				   echo "$id | $name | $course | $phone<br/>";
 				   
 	    }
 				
 		
    }   
+
+   
    
  //-----------------end functions----------------   
 
