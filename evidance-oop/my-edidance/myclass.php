@@ -17,13 +17,13 @@ class Trainee {
     static function  display(){
         $myArr = file("store.txt");
         
-        print_r($myArr);
+        // print_r($myArr);
         echo "<br><br>";
         echo "<b>ID | Name</b><br/>";
 		
         foreach($myArr as $singleData){
             list($id,$name)=explode(",",$singleData);
-            echo "$id ///// $name <br>";
+            echo "$id | $name <br>";
         }
 
 

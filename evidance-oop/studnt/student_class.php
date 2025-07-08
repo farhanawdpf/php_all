@@ -54,4 +54,9 @@ class Student{
 
 }// Student class
 
+
+
+// the trim() function is used to remove whitespace and other predefined characters from both the beginning and the end of a string
+   //The explode() function breaks a string into an array.
+   //The list() function is used to assign values to a list of variables in one operation.
 ?>
