@@ -1,11 +1,10 @@
 <?php 
-session_start();
+
 if(isset($_POST['btnLogin'])){ 
     $username=$_POST['txtUsername'];
     $password=$_POST["txtPassword"];
 
-    if($username==admin && $password==123){ 
-        $_SESSION["sname"]=$username;
+    if($username=="admin" && $password==123){ 
   
         header("location:demo.php");
     }else{ 
