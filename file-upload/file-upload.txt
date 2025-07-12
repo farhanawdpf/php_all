@@ -89,7 +89,9 @@ $from: This parameter specifies the temporary location of the file. This is the 
 $to: This parameter specifies the destination of the location where your file will be stored.
 
 
-
+Decimal vs. Binary:
+In a decimal (base-10) system, 1 KB = 1,000 bytes. 
+In a binary (base-2) system, which is used by computers, 1 KB = 1,024 bytes. 
 
 
 
