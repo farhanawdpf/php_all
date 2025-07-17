@@ -1,0 +1,106 @@
+1. Creating Cookies
+Create a cookie named Auction_Item and assign the value Luxury Car to it. The cookie will expire after 2 days(2 days * 24 hours * 60 mins * 60 seconds).
+
+Example: This example describes the creation of the cookie in PHP.
+<!DOCTYPE html>
+<?php
+    setcookie("Auction_Item", "Luxury Car", time() + 2 * 24 * 60 * 60);
+?>
+<html>
+<body>
+    <?php
+        echo "cookie is created."; 
+    ?>
+    <p>
+        <strong>Note:</strong> 
+        You might have to reload the 
+        page to see the value of the cookie.
+    </p>
+
+</body>
+</html>
+
+
+
+2. Checking Whether a Cookie Is Set Or Not
+It is always advisable to check whether a cookie is set or not before accessing its value. Therefore, to check whether a cookie is set or not, the PHP isset() function is used. To check whether a cookie "Auction_Item" is set or not, the isset() function is executed as follows:
+
+Example: This example describes checking whether the cookie is set or not.
+
+
+<!DOCTYPE html>
+<?php
+    setcookie("Auction_Item", "Luxury Car", time() + 2 * 24 * 60 * 60);
+?>
+<html>
+<body>
+    <?php
+    if (isset($_COOKIE["Auction_Item"]))
+    {
+        echo "Auction Item is a  " . $_COOKIE["Auction_Item"];
+    }
+    else
+    {
+        echo "No items for auction.";
+    }
+    ?>
+    <p>
+        <strong>Note:</strong>
+        You might have to reload the page 
+        to see the value of the cookie.
+    </p>
+
+</body>
+</html>
+
+3. Accessing Cookie Values
+For accessing a cookie value, the PHP $_COOKIE superglobal variable is used. It is an associative array that contains a record of all the cookies values sent by the browser in the current request. The records are stored as a list where the cookie name is used as the key. To access a cookie named "Auction_Item", the following code can be executed.
+
+Example: This example describes accessing & modifying the cookie value.
+
+
+<!DOCTYPE html>
+<?php
+    setcookie("Auction_Item", "Luxury Car", time() + 2 * 24 * 60 * 60);
+?>
+<html>
+<body>
+<?php
+    echo "Auction Item is a  " . $_COOKIE["Auction_Item"];
+?>
+    <p>
+        <strong>Note:</strong> 
+        You might have to reload the page
+        to see the value of the cookie.
+    </p>
+
+</body>
+</html>
+
+
+4. Deleting Cookies
+The setcookie() function can be used to delete a cookie. For deleting a cookie, the setcookie() function is called by passing the cookie name and other arguments or empty strings, however, this time, the expiration date is required to be set in the past. To delete a cookie named "Auction_Item", the following code can be executed.
+
+Example: This example describes the deletion of the cookie value.
+
+
+<!DOCTYPE html>
+<?php
+    setcookie("Auction_Item", "Luxury Car", time() + 2 * 24 * 60 * 60);
+?>
+<html>
+<body>
+    <?php
+       setcookie("Auction_Item", "", time() - 60); 
+    ?>
+    <?php
+        echo "cookie is deleted"; 
+    ?>
+    <p>
+        <strong>Note:</strong>
+        You might have to reload the page 
+        to see the value of the cookie.
+    </p>
+
+</body>
+</html>
