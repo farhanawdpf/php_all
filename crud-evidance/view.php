@@ -52,7 +52,12 @@ if (isset($_GET['deleteid'])){
                     <td>$age</td>
                     <td>$email</td>
                     <td>
-                    <span class='btn btn-success'><a href='edit.php?id=$id' class='text-white text-decoration-none'>Edit</a></span>
+
+
+                    <span class='btn btn-success'>
+                    <a href='edit.php?id=$id' class='text-white text-decoration-none'>Edit</a>
+                    
+                    </span>
                     <span class='btn btn-danger'><a href='view.php?deleteid=$id' class='text-white text-decoration-none'>Delete</a></span>
                     </td>
                 </tr>";
