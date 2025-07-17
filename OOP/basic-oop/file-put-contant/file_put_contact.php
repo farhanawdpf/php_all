@@ -1,5 +1,5 @@
 <?php
-echo file_put_contents("store.txt","hello");
+echo file_put_contents("store.txt","hi");
 
 echo "<br>";
 //explode() function

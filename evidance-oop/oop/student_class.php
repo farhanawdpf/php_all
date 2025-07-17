@@ -15,18 +15,20 @@ class Student{
   
   //---------------csv function-------------------//
    public function csv(){
-	 return $this->id.",".$this->name.PHP_EOL;   
+	 return $this->id.",".$this->name.PHP_EOL;  //End Of Line or create new line 
    }
    
    //-----------save function-----------------//
-   public function save(){
+   public function store(){
 	   
-	       $students=file(self::$file_path);  	   
-	  	
+	      //  $students=file(self::$file_path);  	   
+	  	//The file() reads a file into an array.
 		   file_put_contents(self::$file_path,$this->csv(),FILE_APPEND);
+       //The file_put_contents() writes data to a file.
+     // Use FILE_APPEND to avoid deleting the existing content of the file.
 	   	   
 	   
-   }//end save	
+   }//end store	
        
    
    //---------------display_students-------------//
@@ -36,14 +38,16 @@ class Student{
 	    $students=file(self::$file_path);
 		
 		echo "<b>ID | Name</b><br/>";
-		foreach($students as $student){
-				   list($id,$name)=explode(",",trim($student));
+		foreach($students as $d){
+				   list($id,$name)=explode(",",trim($d));
 				   echo "$id | $name<br/>";   
 	    }
 				
 		
    }   
-   
+  // the trim() function is used to remove whitespace and other predefined characters from both the beginning and the end of a string
+   //The explode() function breaks a string into an array.
+   //The list() function is used to assign values to a list of variables in one operation.
  //-----------------end functions----------------   
 
 }// Student class

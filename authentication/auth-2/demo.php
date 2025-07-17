@@ -1,7 +1,7 @@
 <?php 
  session_start();
 
- if(!isset($_SESSION["sname"])){
+ if(!isset($_SESSION["rname"])){
 	 header("location:login.php");
   }
 ?>
@@ -37,6 +37,6 @@
 </div>
 
 </form>
-
+<a href="logout.php">Logout</a>
 </body>
 </html>

@@ -1,0 +1,110 @@
+PHP File Handling
+In PHP, File handling is the process of interacting with files on the server, such as reading files, writing to a file, creating new files, or deleting existing ones. File handling is essential for applications that require the storage and retrieval of data, such as logging systems, user-generated content, or file uploads.
+
+Types of File Operations in PHP
+Several types of file operations can be performed in PHP:
+fopen() - Opens file or URL
+fwrite() - Binary-safe file write
+file_get_contents() - Reads entire file into a string
+
+
+Reading Files: PHP allows you to read data from files either entirely or line by line.
+Writing to Files: You can write data to a file, either overwriting existing content or appending to the end.
+File Metadata: PHP allows you to gather information about files, such as their size, type, and last modified time.
+File Uploading: PHP can handle file uploads via forms, enabling users to submit files to the server.
+Common File Handling Functions in PHP
+fopen() - Opens a file
+fclose() - Closes a file
+fread() - Reads data from a file
+fwrite() - Writes data to a file
+file_exists() - Checks if a file exists
+unlink() - Deletes a file
+Opening and Closing Files
+Before you can read or write to a file, you need to open it using the fopen() function, which returns a file pointer resource. Once you're done working with the file, you should close it using fclose() to free up resources.
+
+
+<?php
+
+// Open the file in read mode
+$file = fopen("gfg.txt", "r"); 
+
+if ($file) {
+    echo "File opened successfully!";
+    fclose($file); // Close the file
+} else {
+    echo "Failed to open the file.";
+}
+
+?>
+File Modes in PHP
+Files can be opened in any of the following modes:
+
+"w" – Opens a file for writing only. If the file does not exist, then a new file is created, and if the file already exists, then the file will be truncated (the contents of the file are erased).
+"r" – File is open for reading only.
+"a" – File is open for writing only. The file pointer points to the end of the file. Existing data in the file is preserved.
+"w+" – Opens file for reading and writing both. If the file does not exist, then a new file is created, and if the file already exists, then the contents of the file are erased.
+"r+" – File is open for reading and writing both.
+"a+" – File is open for write/read. The file pointer points to the end of the file. Existing data in the file is preserved. If the file is not there, then a new file is created.
+"x" – New file is created for write only.
+Reading from Files
+There are two ways to read the contents of a file in PHP. These are -
+
+1. Reading the Entire File
+You can read the entire content of a file using the fread() function or the file_get_contents() function.
+
+
+<?php
+
+$file = fopen("gfg.txt", "r");
+$content = fread($file, filesize("gfg.txt"));
+
+echo $content;
+fclose($file);
+
+?>
+2. Reading a File Line by Line
+You can use the fgets() function to read a file line by line.
+
+
+<?php
+  
+$file = fopen("gfg.txt", "r");
+
+if ($file) {
+    while (($line = fgets($file)) !== false) {
+        echo $line . "<br>";
+    }
+    fclose($file);
+}
+
+?>
+Writing to Files
+You can write to files using the fwrite() function. It writes data to an open file in the specified mode.
+
+
+<?php
+  
+// Open the file in write mode
+$file = fopen("gfg.txt", 'w');
+
+if ($file) {
+    $text = "Hello world\n";
+    fwrite($file, $text);
+  	fclose($file);
+}
+
+?>
+Deleting Files
+Use the unlink() function to delete the file in PHP.
+
+
+<?php
+
+if (file_exists("gfg.txt")) {
+    unlink("gfg.txt");
+    echo "File deleted successfully!";
+} else {
+    echo "File does not exist.";
+}
+
+?>

@@ -1,13 +1,15 @@
 <?php  
-$x =0;
+$x ="xd";
 
 if(isset($x)){ 
-    echo "variable 'x' show";
+echo "done";
+}else{ 
+    echo "not done";
 }
 
-$y = null;
-if(isset($y)){ 
- echo "varible 'Y'";
-}
+// $y = null;
+// if(isset($y)){ 
+//  echo "variable 'Y'";
+// }
 
 ?>

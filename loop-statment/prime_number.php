@@ -7,7 +7,7 @@ enter a number<input type="text" name="fname">
 <?php
 $b=$_POST["fname"];
 $c=0;
-if(isset($_POST["submit"]))
+if($_POST["submit"])
 {
 if($b==0 || $b==1)
 {

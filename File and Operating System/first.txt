@@ -1,0 +1,3 @@
+this my new file.
+this my   second line.
+this my   third line.

@@ -18,7 +18,7 @@ if(isset($_POST['addProduct'])){
 
 if(isset($_POST['delmanufact'])){
 	$mid = $_POST['manufac'];
-	$db->query(" delete from manufacturer where id='$mid ' ");
+	$db->query(" delete from manufacturer where id='$mid' ");
 }
 
 

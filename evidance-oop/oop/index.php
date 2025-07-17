@@ -9,7 +9,7 @@ if(isset($_POST["btnSubmit"])){
 
 
 		$student=new Student($id,$name); 	
-		$student->save();
+		$student->store();
 		echo "Success!";
 }
 ?>

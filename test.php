@@ -1,20 +1,18 @@
-<?php 
+<?php
 
-echo phpversion(). "<br>";
-?>
+$he = 'Bob';
+$she = 'Alice';
 
+$text = <<<TEXT
+$he said "PHP is awesome".
+"Of course" $she agreed.".'fgdg'
+TEXT;
 
-<?php 
-$a = 4;
-$b = 3;
-$b = 4;
+echo $text;
 
-
-printf (($a + $b)."<br>");
-
-echo phpversion()."<br>";
-
-define("CON","This is my first code");
-echo CON."<br>";
-
-
+$str = <<<'IDENTIFIER'
+place a "string" here
+it can span multiple lines
+and include single quote ' and double quotes "
+IDENTIFIER;
+echo $str;

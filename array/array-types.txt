@@ -1,0 +1,98 @@
+PHP Array Types
+In PHP, there are three types of arrays:
+
+Indexed arrays - Arrays with a numeric index
+Associative arrays - Arrays with named keys
+Multidimensional arrays - Arrays containing one or more arrays
+
+1. Indexed Arrays (Numeric Arrays): 
+These arrays use numerical indices (0, 1, 2, etc.) to access elements.
+Example: $fruits = ["apple", "banana", "orange"];
+You can access "banana" using $fruits[1].
+2. Associative Arrays: 
+These arrays use named keys (strings or integers) to access elements.
+Example: $ages = ["Peter" => 35, "Ben" => 37, "Joe" => 43];
+You can access Ben's age using $ages["Ben"].
+3. Multidimensional Arrays: 
+These arrays contain other arrays as elements, creating nested structures.
+They can be indexed or associative arrays within other arrays.
+Example (indexed):
+Syntax:
+Two dimensional array
+It is the simplest form of a multidimensional array. It can be created using nested array. These type of arrays can be used to store any type of elements, but the index is always a number. By default, the index starts with zero.
+
+Syntax:
+
+array (
+    array (elements...),
+    array (elements...),
+    ...
+)
+
+
+<?php
+
+// PHP program to create 
+// multidimensional array
+
+// Creating multidimensional
+// array
+$myarray = array(
+    
+    // Default key for each will
+    // start from 0
+    array("Ankit", "Ram", "Shyam"),
+    array("Unnao", "Trichy", "Kanpur")
+);
+    
+// Display the array information
+print_r($myarray);
+?>
+
+
+
+Three Dimensional Array
+It is the form of multidimensional array. Initialization in Three-Dimensional array is same as that of Two-dimensional arrays. The difference is as the number of dimension increases so the number of nested braces will also increase.
+array (
+    array (
+        array (elements...),
+        array (elements...),
+        ...
+    ),
+    array (
+        array (elements...),
+        array (elements...),
+        ...
+    ),
+    ...
+)
+
+
+    $cars = array (
+      array("Volvo",22,18),
+      array("BMW",15,13),
+      array("Saab",5,2)
+    );
+
+
+
+<?php
+
+Indexed arrays
+$cars = array("Volvo", "BMW", "Toyota"); 
+echo $cars[0];
+?>
+Associative arrays
+
+<?php
+$car = array("brand"=>"Ford", "model"=>"Mustang", "year"=>1964);
+var_dump($car);
+?>
+
+<?php
+$car = array("brand"=>"Ford", "model"=>"Mustang", "year"=>1964);
+echo $car["model"];
+?>
+
+PHP - Multidimensional Arrays
+A multidimensional array is an array containing one or more arrays.

@@ -1,0 +1,61 @@
+String
+Integer
+Float (floating point numbers - also called double)
+Boolean
+Array
+Object
+NULL
+
+
+You can get the data type of any object by using the var_dump() function.
+
+string
+$x = "Hello world!";
+$y = 'Hello world!';
+
+var_dump($x);
+echo "<br>";
+var_dump($y);
+
+PHP Integer
+An integer data type is a non-decimal number between -2,147,483,648 and 2,147,483,647.
+
+$x = 5985;
+var_dump($x)
+
+
+PHP Float
+A float (floating point number) is a number with a decimal point or a number in exponential form.
+
+
+$x = 180.36754;
+var_dump($x);
+
+
+PHP Boolean
+A Boolean represents two possible states: TRUE or FALSE.
+
+PHP Array
+An array stores multiple values in one single variable.
+
+
+$cars = array("Volvo","BMW","Toyota");
+var_dump($cars);
+
+PHP Object
+
+
+class Car {
+  public $color;
+  public $model;
+  public function __construct($color, $model) {
+    $this->color = $color;
+    $this->model = $model;
+  }
+  public function info() {
+    return "My car is a " . $this->color . " " . $this->model . "!";
+  }
+}
+
+$myCar = new Car("red", "Volvo");
+var_dump($myCar);

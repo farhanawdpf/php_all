@@ -3,7 +3,7 @@
 print_r ($a);
 ?>*/
 
-	$a=array("rowdra");
+	$a=array("r");
 		echo is_array($a);
 
 ?>

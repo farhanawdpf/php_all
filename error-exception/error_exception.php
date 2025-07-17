@@ -1,5 +1,17 @@
 <?php
+// Definition and Usage
+// The Exception() constructor is used to create an Exception object and set some of its properties.
 
+// Syntax
+// new Exception(message, code, previous)
+// getMessage — Gets the Exception message
+
+
+// Definition and Usage
+// The getMessage() method returns a description of the error or behaviour that caused the exception to be thrown.
+
+// Syntax
+// $exception->getMessage()
 // try {
 //     tryStatements
 //   } catch (exceptionVar) {
@@ -8,13 +20,21 @@
 //     finallyStatements
 // }
 
+// <?php
+// try {
+//     throw new Exception("Some error message");
+// } catch(Exception $e) {
+//     echo $e->getMessage();
+// }
+// 
+$a = 10;
 
-$a = 40;
+
 try{ 
-if ($a>30){ 
- throw new Exception("Invalid Number"); 
+if ($a<30){ 
+ throw new Exception("valid Number"); 
 }else { 
-    throw new Exception("Valid Number");
+    throw new Exception("invalid Number");
 }
 }
 catch(Exception $e){ 

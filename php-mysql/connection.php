@@ -13,13 +13,16 @@
 
 // procedural way
 
-$hostname = "localhost";
-$user = "root";
-$password = "";
-$dbname = "db_name";
-$conn = mysqli_connect($hostname,$user,$password,$dbname);
+// $hostname = "localhosts";
+// $user = "root";
+// $password = "";
+// $dbname = "db_name";
+$conn= mysqli_connect("localhost","root","","new_database");
+
+
+
 if(!$conn){ 
 die("Connection Failed.");
 }
-echo "connection succefully";
+echo "connection successfully";
 ?>

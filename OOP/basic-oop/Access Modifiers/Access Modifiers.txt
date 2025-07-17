@@ -1,0 +1,145 @@
+=================Access Modifiers=====================
+
+
+
+Properties and methods can have access modifiers which control where they can be accessed.
+
+There are three access modifiers:
+
+Public: The property or method is accessible from anywhere (inside and outside of the class).
+
+Private: The property or method is accessible only within the class where it is declared.
+
+Protected: The property or method is accessible within the class and by classes derived from that class (child classes).
+
+
+--------------Public Access Modifier---------------------
+<?php
+class Person {
+    public $name;
+
+    public function sayHello() {
+        return "Hello, my name is $this->name.";
+    }
+}
+
+$person = new Person();
+$person->name = "John"; // Accessible directly
+echo $person->sayHello(); // Output: Hello, my name is John.
+?>
+
+
+----------Private Access Modifier---------------------
+<?php
+class BankAccount {
+    private $balance = 0;
+
+    public function deposit($amount) {
+        $this->balance += $amount;
+    }
+
+    public function getBalance() {
+        return $this->balance;
+    }
+}
+
+$account = new BankAccount();
+$account->deposit(100);
+// echo $account->balance; // Error: Cannot access private property
+echo $account->getBalance(); // Output: 100
+?>
+
+
+<?php
+class MyClass {
+    private $secret = "Top Secret";
+
+    private function getSecret() {
+        return $this->secret;
+    }
+
+    public function revealSecret() {
+        return $this->getSecret();  // Allowed internally
+    }
+}
+
+$obj = new MyClass();
+echo $obj->revealSecret(); // Works
+echo $obj->secret;      // Error: Cannot access private property
+echo $obj->getSecret(); // Error: Cannot access private method
+?>
+
+
+======================Protected Access Modifier============================
+The protected access modifier makes class properties or methods accessible within the class and its subclasses (child classes).
+ members can be accessed within the class and its child class only, nowhere else.
+
+
+<?php
+class Animal {
+    protected $type;
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+}
+
+class Dog extends Animal {
+    public function getType() {
+        return "This is a $this->type.";
+    }
+}
+
+$dog = new Dog();
+$dog->setType("dog");
+// echo $dog->type; // Error: Cannot access protected property
+echo $dog->getType(); // Output: This is a dog.
+?>
+
+
+
+
+
+<?php
+class ParentClass {
+    protected $message = "Hello from Parent";
+  
+    protected function showMessage() {
+        return $this->message;
+    }
+}
+
+class ChildClass extends ParentClass {
+    public function getMessage() {
+        return $this->showMessage();  
+    }
+}
+
+$obj = new ChildClass();
+echo $obj->getMessage();  
+echo $obj->message;    
+?>
+================================
+<?php
+/**
+ * Define MyClass
+ */
+class MyClass
+{
+    public $public = 'Public';
+    protected $protected = 'Protected';
+    private $private = 'Private';
+
+    function printHello()
+    {
+        echo $this->public;
+        echo $this->protected;
+        echo $this->private;
+    }
+}
+
+$obj = new MyClass();
+echo $obj->public; // Works
+echo $obj->protected; // Fatal Error
+echo $obj->private; // Fatal Error
+$obj->printHello(); // Shows Public, Protected and Private

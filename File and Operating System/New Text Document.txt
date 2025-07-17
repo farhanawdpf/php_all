@@ -1,0 +1,49 @@
+Key Concepts and Functions:
+fopen(): Opens a file, returning a file handle (resource) for further operations. It takes the file path and mode (e.g., "r" for read, "w" for write, "a" for append) as arguments. 
+fread(): Reads data from an open file, specifying the number of bytes to read. 
+fwrite(): Writes data to an open file. 
+fclose(): Closes an open file, releasing resources. 
+file_exists(): Checks if a file exists. 
+unlink(): Deletes a file. 
+php_uname(): Returns information about the operating system. 
+shell_exec(): Executes a system command and returns its output. 
+file_get_contents(): Reads the entire content of a file into a string. 
+file_put_contents(): Writes data to a file. 
+fgetcsv(): Reads a line from a CSV file and parses it into an array. 
+fputcsv(): Writes an array to a CSV file as a line. 
+Important Notes:
+Always close files using fclose() after finishing operations to release resources. 
+Be cautious when using shell_exec() as it can pose security risks if not handled carefully. Always sanitize user input before passing it to shell commands. 
+PHP provides functions for various file permissions checks (e.g., is_readable(), is_writable()) to enhance security. 
+For larger files, consider using buffered reading and writing operations with fopen(), fread(), and fwrite() instead of loading the entire file into memory using file_get_contents(). 
+
+##The PHP code to read the file and write it to the output buffer is as follows (the readfile() function returns the number of bytes read on success):
+
+<?php
+echo readfile("webdictionary.txt");
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Modes		Description
+r		Open a file for read only. File pointer starts at the beginning of the file
+w		Open a file for write only. Erases the contents of the file or creates a new file if it 		doesn't exist. File pointer starts at the beginning of the file
+a		Open a file for write only. The existing data in file is preserved. File pointer starts at 		the end of the file. Creates a new file if the file doesn't exist
+x		Creates a new file for write only. Returns FALSE and an error if file already exists
+r+		Open a file for read/write. File pointer starts at the beginning of the file
+w+		Open a file for read/write. Erases the contents of the file or creates a new file if it 		doesn't exist. File pointer starts at the beginning of the file
+a+		Open a file for read/write. The existing data in file is preserved. File pointer starts at 		the end of the file. Creates a new file if the file doesn't exist
+x+		Creates a new file for read/write. Returns FALSE and an error if file already exists

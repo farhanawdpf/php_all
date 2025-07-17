@@ -6,8 +6,8 @@
 	  $password=$_POST["txtPassword"];
 	  
     if ($username=="admin" && $password=="123"){ 
-			 $_SESSION["sname"]=$username;
-       header("location:demo.php");
+      $_SESSION["rname"]=$username;
+			header("location:demo.php");
   } else{ 
     $msg="Username or Password is incorrect!";
   }

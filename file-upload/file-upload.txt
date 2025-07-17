@@ -1,0 +1,120 @@
+$_FILES:
+
+
+$_FILES is a PHP super-global and variable. It contains names, sizes, and mime types of files uploaded in the current HTTP request.
+
+In HTML file upload fields, it is possible to upload an entire directory with the webkitdirectory attribute. This feature is supported in most modern browsers.
+
+
+
+
+Attribute	Description
+[name]	Name of file which is uploading
+[size]	Size of the file
+[type]	Type of the file (like .pdf, .zip, .jpeg…..etc)
+[tmp_name]	A temporary address where the file is located before processing the upload request
+[error]	Types of error occurred when the file is uploading
+
+
+$_FILES[input-field-name][name]
+$_FILES[input-field-name][tmp_name]
+$_FILES[input-field-name][size]
+$_FILES[input-field-name][type]
+$_FILES[input-field-name][error]
+
+
+or 
+Properties of $_FILES
+The $_FILES array contains the following properties −
+
+$_FILES['file']['name'] − The original name of the file that the user has chosen to be uploaded.
+
+$_FILES['file']['type'] − The mime type of the file. An example would be "image/gif". This mime type is however not checked on the PHP side.
+
+$_FILES['file']['size'] − The size, in bytes, of the uploaded file.
+
+$_FILES['file']['tmp_name'] − The temporary filename of the file in which the uploaded file was stored on the server.
+
+$_FILES['file']['full_path'] − The full path as submitted by the browser. Available as of PHP 8.1.0.
+
+$_FILES['file']['error'] − The error code associated with this file upload.
+
+
+
+File Name: " . $file_name . "";
+        
+        echo "
+        File Type: " . $file_type . "";
+        
+        echo "
+        File Size: " . $file_size . "";
+        
+        echo "
+        File Error: " . $file_error . "";
+        
+        echo "
+        File Temporary Name: " . $file_tmp_name . "";
+        
+    }
+}
+?>
+
+
+
+
+PHP | is_uploaded_file( ) Function
+
+The is_uploaded_file() function in PHP is an inbuilt function which is used to check whether the specified file uploaded via HTTP POST or not. The name of the file is sent as a parameter to the is_uploaded_file() function and it returns True if the file is uploaded via HTTP POST. This function can be used to ensure that a malicious user hasn't tried to trick the script into working on files upon which it should not be working. Syntax:
+bool is_uploaded_file($file)
+Parameters Used: This function accepts single parameter $file.
+$file: It is a mandatory parameter which specifies the file.
+
+
+PHP copy( ) Function:
+
+The copy() function in PHP is an inbuilt function which is used to make a copy of a specified file. It makes a copy of the source file to the destination file and if the destination file already exists, it gets overwritten. The copy() function returns true on success and false on failure. Syntax:
+bool copy ( $source, $dest )
+Parameters: The copy() function in PHP accepts two parameters which are source and destination.
+
+
+PHP move_uploaded_file() Function
+The move_uploaded_file() function is an inbuilt function in PHP that is used to change the file destination. This function only works when the file is uploaded by the PHP POST function. If the file is valid it will uploaded.
+
+Syntax:
+
+move_uploaded_file( string $from, string $to ): bool
+Parameters: This function accepts two parameters that are described below.
+
+$from: This parameter specifies the temporary location of the file. This is the location where your uploaded file is stored temporarily.
+$to: This parameter specifies the destination of the location where your file will be stored.
+
+
+Decimal vs. Binary:
+In a decimal (base-10) system, 1 KB = 1,000 bytes. 
+In a binary (base-2) system, which is used by computers, 1 KB = 1,024 bytes. 
+
+
+
+
+
+
+
+
+
+<html>
+<body>
+   <form action="hello.php" method="POST" enctype="multipart/form-data">
+      <p><input type="file" name="file"></p>
+      <p><input type ="submit" value="submit"></p>
+   </form>
+</body>
+</html>
+
+
+<?php
+   echo "Filename: " . $_FILES['file']['name']."<br>";
+   echo "Type : " . $_FILES['file']['type'] ."<br>";
+   echo "Size : " . $_FILES['file']['size'] ."<br>";
+   echo "Temp name: " . $_FILES['file']['tmp_name'] ."<br>";
+   echo "Error : " . $_FILES['file']['error'] . "<br>";
+?>

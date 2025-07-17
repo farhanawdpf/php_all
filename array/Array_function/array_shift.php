@@ -1,5 +1,5 @@
 <?php
-	$p=array("rowdra","lucky","liza","kalpona");
+	$p=array("a","b","c","d");
 	$q=array_shift($p);
 		echo $q;
 ?>

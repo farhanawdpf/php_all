@@ -1,6 +1,6 @@
 <?php
- $a=array("rowdra","liza","lucky","kalpona");
- $b=array_push($a,"afroza");
+ $a=array("a","b","c","d");
+ $b=array_push($a,"e");
  	print_r($a);
 	echo "<br/>";
 	echo $b;

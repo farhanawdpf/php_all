@@ -1,5 +1,5 @@
 <?php
-	$a=array("rowdra","lucky","liza","kalpona");
+	$a=array("a","b","c","d");
 	$b=array_pop($a);
-		echo $b;
+		echo $b;//a,b,c
 ?>

@@ -1,0 +1,37 @@
+Fatal run-time errors (E_ERROR | Code 1)
+As the name suggests, these errors can not be recovered from. They are encountered when the operation specified in your code can not be performed. As a result, execution is halted. 
+
+For example - if you try to call a function that has not been defined, a fatal run-time error would be raised.
+
+<?php
+function foo() {
+   echo "Function foo called.";
+}
+boo(); // undefined function 'boo'
+?>
+
+
+
+Warning errors (E_WARNING | Code 2)
+A warning error is more subtle in that regard. It does not halt execution - just acts as a friendly reminder of something incorrect in your code, that might pose a bigger problem in the future. 
+
+The most common example of a warning error being raised is when you include a missing file in your code.
+
+<?php
+include('filename.txt'); // arbitrary file that is not present
+echo "Hello world";
+?>
+
+
+4.Notice errors (E_NOTICE | Code 8)
+Notice errors are similar to warning errors in that they are encountered during run-time and they don’t halt code execution. They indicate that something is incorrect in the script that even though doesn’t interrupt execution, should be fixed.
+
+A common example would be trying to use an undefined variable in your code.
+
+<?php
+if(isset($b)){ 
+    $a=$b+1;
+}else{ 
+    trigger_error('$b is not yet');
+}
+?>

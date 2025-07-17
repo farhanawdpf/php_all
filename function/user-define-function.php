@@ -1,6 +1,8 @@
 <?php 
 //user define function
 
+
+
 function Info (){ 
     echo "This is my First page!";
 }
@@ -16,9 +18,10 @@ name(3,4);
 echo "<br>";
 //return keyword
 
-function Info2(int $x,int $y){ 
+function Info2($x,$y){ 
     $t =$x+$y;
     return $t;
+
 }
 
 echo Info2(5,3);
