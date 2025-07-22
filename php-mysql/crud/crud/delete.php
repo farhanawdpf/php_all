@@ -21,7 +21,9 @@ if (isset($_GET['deleteid'])){
 	<tr>
 		<th>ID</th>
 		<th>Name</th>
+		<th>Age</th>
 		<th>email</th>
+		<th>contact</th>
 		<th>Action</th>
 	
 	</tr>
@@ -37,7 +39,9 @@ if (isset($_GET['deleteid'])){
 						<td> 
 							<a href='delete.php?deleteid=$_id'>
 								Delete
-							</a>
+							</a>||
+							<a href='edit.php?id=$_id'> 
+							<span>Edit</span> </a>
 						</td>
 				</tr>";
 		}
