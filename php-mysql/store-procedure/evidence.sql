@@ -40,9 +40,25 @@ delimiter ;
 
 
 
+
 drop view if exists view_product;
-create view view_product as select p.id,p.name,p.price,m.name manme,
+
+
+create view view_product as select product.id,
+p.name,p.price,m.name manme,
 m.contact from product p, manufacturer m where m.id=p.manufac_id ;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 delimiter //

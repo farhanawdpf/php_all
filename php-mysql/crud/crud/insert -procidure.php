@@ -6,16 +6,15 @@ if (isset($_POST['submit'])) {
    $e = $_POST['semail'];
    $c = $_POST['scontact'];
    $db->query("call call_users('$n','$a','$e','$c')");
-
-   //   $sql = "INSERT INTO users(name,age,email,contact) VALUES ('$n','$a','$e','$c')";
-   //   if(mysqli_query($db, $sql) == TRUE){ 
-   //      echo "DATA INSERTED";
-   //      header('location:view.php');
-   //   }else{ 
-   //      echo "not inserted";
-   //   }
 }
 
+if (isset($_POST['product_submit'])) {
+   $n = $_POST['name'];
+   $p = $_POST['price'];
+   $uid = $_POST['uid'];
+
+   $db->query("call call_product('$n','$p','$uid')");
+}
 
 ?>
 
@@ -29,9 +28,9 @@ if (isset($_POST['submit'])) {
 <body>
    <div class="container">
       <div class="row">
-         <div class="col-sm-3"></div>
-         <a href="view.php">View Result</a>
-         <div class="col-sm-6 pt-4 mt-4 border border-success">
+         <h2>Insert User</h2>
+         <!-- user form -->
+         <div class="col-sm-6 pt-4 border border-success">
             <form action="#" method="POST">
                Name:<br>
                <input type="text" name="sname"><br><br>
@@ -44,9 +43,56 @@ if (isset($_POST['submit'])) {
                <input type="submit" name="submit" value="insert" class="btn btn-success">
             </form>
          </div>
-         <div class="col-sm-3"></div>
+         <div class="col-sm-6 pt-4 border border-success">
+            <h2>Insert Products</h2>
+            <form action="#" method="POST">
+               Product Name:<br>
+               <input type="text" name="name"><br><br>
+               Price:<br>
+               <input type="text" name="price"><br><br>
+               User:<br>
+               <select name="uid">
+                  <?php
+                  $users = $db->query("select * from users");
+                  while (list($_mid, $_mname) = $users->fetch_row()) {
+                     echo "<option value='$_mid'>$_mname</option>";
+                  }
+                  ?>
+               </select>
+               <br><br>
+               <input type="submit" name="product_submit" value="Submit" class="btn btn-success">
+            </form>
+         </div>
+      </div>
+      <div class="row"> 
+      <h3>View Product</h3>
+
+      <table border="1" style="border-collapse: collapse;" > 
+         <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>user</th>
+            <th>Contact</th>
+         </tr>
+         <?php 
+            $product = $db->query(" select * from product_info");
+            while(list($_id,$_name,$_price,$_mname,$_mcont) = $product->fetch_row()){
+               echo "<tr> 
+                     <td>$_id</td>
+                     <td>$_name</td>
+                     <td>$_price</td>
+                     <td>$_mname</td>
+                     <td>$_mcont</td>
+                  </tr>";
+            }
+         
+         ?>
+      </table>
       </div>
    </div>
+
+
 </body>
 
 </html>
