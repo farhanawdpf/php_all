@@ -16,6 +16,11 @@ if (isset($_POST['product_submit'])) {
    $db->query("call call_product('$n','$p','$uid')");
 }
 
+if(isset($_POST['delmanufact'])){
+	$mid = $_POST['menu'];
+	$db->query(" delete from users where id='$mid ' ");
+}
+
 ?>
 
 <html lang="en">
@@ -60,6 +65,19 @@ if (isset($_POST['product_submit'])) {
                   ?>
                </select>
                <br><br>
+
+               manufacture:<br>
+               <select name="menu">
+                  <?php
+                  $users = $db->query("select id from users");
+                  while (list($_mid) = $users->fetch_row()) {
+                     echo "<option value='$_mid'>$_mid</option>";
+                  }
+                  ?>
+               </select>
+
+               <br><br>
+               <input type="submit" name="delmanufact" value="delete" /><br><br>
                <input type="submit" name="product_submit" value="Submit" class="btn btn-success">
             </form>
          </div>
