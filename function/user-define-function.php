@@ -1,34 +1,19 @@
-<?php 
+<?php
 //user define function
 
-
-
-function Info (){ 
-    echo "This is my First page!";
+function info($name)
+{
+    echo "This is our class $name";
 }
-Info ();
+
+info("PWAD");
+
 echo "<br>";
 
-function name($num1, $num2){ 
-    echo $num1+$num2;
+
+function add($a, $b)
+{
+    echo $a + $b;
 }
 
-name(3,4);
-
-echo "<br>";
-//return keyword
-
-function Info2($x,$y){ 
-    $t =$x+$y;
-    return $t;
-
-}
-
-echo Info2(5,3);
-echo "<br>";
-
-function country($name,$year){ 
-    echo "$name is our country $year Indepandance day";
-}
-country("Bangladesh",1971);
-?>
+add(5, 6);

@@ -1,10 +1,12 @@
-
-<?php 
+<?php
 //Index Array(Automatically or manually)
 
 //Automatically
 $cars = array("Volvo", "BMW", "Toyota");
 var_dump($cars);
+echo $cars[0];
+echo $cars[1];
+echo $cars[2];
 
 // $cars =["Volvo", "BMW", "Toyota"];
 
@@ -17,8 +19,8 @@ foreach ($cars as $x) {
 }
 
 
- $pen = ["Parker", "Flair", "Cello"];
-echo $pen[2];  
+$pen = ["Parker", "Flair", "Cello"];
+echo $pen[2];
 
 echo "<br>";
 // manually
@@ -30,4 +32,3 @@ $cars[2] = "Toyota";
 
 var_dump($cars);
 echo $cars[1];
-?>

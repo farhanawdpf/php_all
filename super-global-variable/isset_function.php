@@ -1,15 +1,9 @@
-<?php  
-$x ="xd";
-
-if(isset($x)){ 
-echo "done";
-}else{ 
-    echo "not done";
+<?php
+// (isset)
+//variabal and value check
+$name;
+if (isset($name)) {
+    echo "done";
+} else {
+    echo "Variabal and value is not found";
 }
-
-// $y = null;
-// if(isset($y)){ 
-//  echo "variable 'Y'";
-// }
-
-?>

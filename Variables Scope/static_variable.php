@@ -9,15 +9,17 @@
 
 <body>
     <?php
-    echo $_REQUEST['uname'];
+    function test()
+    {
+        static $x = 0;
+        echo $x;
+        $x++;
+    }
+
+    test();
+    test();
+    test();
     ?>
-
-    <form action="#" method="post">
-        User Name: <br>
-        <input type="text" name="uname"> <br>
-        <input type="submit" value="Submit">
-
-    </form>
 </body>
 
 </html>

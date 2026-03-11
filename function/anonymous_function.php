@@ -1,13 +1,15 @@
-<?php 
-
-$f=function(){ 
-    echo "hi";
+<?php
+$add = function ($a) {
+    echo "hello $a ";
 };
-$f();
+$add("world");
+// arrow function
 
-$v= function (){ 
-    echo "hello bangladesh";
-};
-echo $v();
+$functionvarName = fn() => "Hello World";
 
-?>
+echo $functionvarName();
+
+$a = function () {};
+
+
+$b = fn($a, $b) => "";

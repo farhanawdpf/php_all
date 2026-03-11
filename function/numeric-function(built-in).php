@@ -1,22 +1,14 @@
-<?php 
-//numeric[is_numeric(),round(),rand(min,max);]
-function num(){ 
-    echo is_numeric(45);
-};
-num();
+<?php
+//numeric[is_numeric(),round(),rand(min,max),intval();]
+$num = "123.52445";
+var_dump(is_numeric($num));
+echo "<br>";
+// convart dec  to int 
+echo  intval($num);
+echo "<br>";
+echo  round($num, 1);
 echo "<br>";
 
-function num2(){ 
-    echo ("Round: ".round(34.4545));
-}
-
-num2();
+echo  floatval($num);
 echo "<br>";
-function num3(){ 
-    echo rand(1000,9999);
-    echo "<br>";
-    echo ("Random Number: ".rand());
-}
-
-num3();
-?>
+echo pow(2, 2);

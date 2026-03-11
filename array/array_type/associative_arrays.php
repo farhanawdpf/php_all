@@ -1,15 +1,16 @@
-
 <?php
-   $arr1 = array("a"=>10, "b"=>20, "c"=>30, "d"=>40);
-   foreach ($arr1 as $k=>$v){
-      $arr2[$k] = $v*2 ." <br>";
-   }
-   print_r($arr2);
+$person = ['Name' => 'Ifty', 'age' => 15, 'round' => '70'];
+// $a_key = array_key_first($person);
+// $a_value = $person[$a_key];
+// echo $a_key . ':' . $a_value;
+// echo "<br>";
+// echo $person["name"];
+// echo $person["age"];
+// echo $person["round"];
 
-echo "<br>";
+//second key
 
-   $car = array("brand"=>"Ford", "model"=>"Mustang", "year"=>1964);
-echo $car["model"];
-echo "<br>";
- print_r($car);
-?>
+$b_key = array_keys($person);
+$second = $b_key[2];
+$b_value = $person[$second];
+echo $second . ':' . $b_value;

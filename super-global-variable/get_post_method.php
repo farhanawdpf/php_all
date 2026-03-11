@@ -1,16 +1,9 @@
-<?php 
-echo $_GET['fname'];
+<?php
+$name = $_REQUEST['name'];
+echo "Name: " . $name;
 ?>
 
-<form action="<?php $_SERVER['PHP_SELF']?>" method="POST"> 
-        <input type="text" name="fname">
-        <input type="submit" value="submit">
+<form action="#" method="post">
+    Name: <input type="text" name="name">
+    <input type="submit">
 </form>
-
-<?php 
-$prompt_massage="plese enter your name";
-
-$r=prompt($prompt_massage);
-echo $r;
-
-?>
