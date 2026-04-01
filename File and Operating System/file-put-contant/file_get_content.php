@@ -10,4 +10,3 @@ $current .= "This is store function.\n";
 file_put_contents($file, $current);
 
 echo file_get_contents($file);
-?>
