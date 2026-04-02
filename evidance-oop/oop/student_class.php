@@ -3,7 +3,7 @@
 class Student
 {
   private $id;
-  private $name;
+  public $name;
 
   private static $file_path = "data.txt";
 
@@ -43,12 +43,12 @@ class Student
 
     echo "<b>ID | Name</b><br/>";
     foreach ($students as $d) {
-      list($id, $name) = explode(",", trim($d));
+      list($id, $name) = explode(",", trim("$d"));
       echo "$id | $name<br/>";
     }
   }
   // the trim() function is used to remove whitespace and other predefined characters from both the beginning and the end of a string
-  //The explode() function breaks a string into an array.
+  //The explode() function breaks a string into an array for comma separate.
   //The list() function is used to assign values to a list of variables in one operation.
   //-----------------end functions----------------   
 
