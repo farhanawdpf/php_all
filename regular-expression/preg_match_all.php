@@ -12,9 +12,7 @@ echo "<br>";
 // preg_match_all("/[^eh]/","This is matches elements",$p);
 // print_r ($p);
 echo "<br>";
-$text="T7c";
-$ptrn ="/^[a-zA-Z0-9]{3,5}$/";
+$text = "T7c";
+$ptrn = "/^[a-zA-Z0-9]{3,5}$/";
 
-echo preg_match_all($ptrn,$text);
-
-?>
+echo preg_match_all($ptrn, $text);

@@ -1,3 +1,14 @@
+"/pattern/modifiers"
+delimiters - charcters that enclose the pattern (e.g. /)
+pattern - the character sequence to search for
+modifiers - how the search is performed (e.g. i indicates a case-insensitive search)
+
+$exp = "/hello/i";
+$pattern = "/o/i";
+echo preg_match_all($pattern, $exp);
+echo preg_replace($pattern, "#", $exp);
+
+
 What is a Regular Expression?
 
 Operators in Regular Expression
@@ -60,3 +71,28 @@ preg_replace(): Replaces all occurrences of a pattern in a string with a new str
 preg_split(): Splits a string into an array of substrings using a specified pattern as the delimiter.
 preg_match_all(): Searches a string for all occurrences of a pattern and returns an array of all matches.
 PHP also provides a variety of options and flags that can be used with these functions to control how regular expressions are matched and processed.
+
+
+
+
+
+1.Password Requirements
+Let’s say your requirements are:
+Minimum 8 characters
+At least 1 uppercase letter
+At least 1 lowercase letter
+At least 1 number
+At least 1 special character (like @#$%^&+=)
+
+2.Email Requirements (Common for Validation)
+Must contain exactly one @ symbol.
+Username part (before @) can contain:
+Letters (a–z, A–Z)
+Numbers (0–9)
+Dots ., underscores _, percent %, plus +, minus -
+Domain part (after @) can contain:
+Letters (a–z, A–Z)
+Numbers (0–9)
+Dots ., hyphens -
+Top-Level Domain (TLD) must be at least 2 letters (like .com, .net).
+No spaces allowed anywhere.

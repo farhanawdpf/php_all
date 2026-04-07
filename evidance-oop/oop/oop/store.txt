@@ -3,3 +3,5 @@
 12,tt
 gj,gj
 1001,sumi
+12,te
+12,te
