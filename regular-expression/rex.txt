@@ -73,11 +73,7 @@ preg_match_all(): Searches a string for all occurrences of a pattern and returns
 PHP also provides a variety of options and flags that can be used with these functions to control how regular expressions are matched and processed.
 
 
-
-
-
 1.Password Requirements
-Let’s say your requirements are:
 Minimum 8 characters
 At least 1 uppercase letter
 At least 1 lowercase letter
