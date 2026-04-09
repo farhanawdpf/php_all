@@ -1,5 +1,7 @@
+
 Fatal run-time errors (E_ERROR | Code 1)
 As the name suggests, these errors can not be recovered from. They are encountered when the operation specified in your code can not be performed. As a result, execution is halted. 
+
 
 For example - if you try to call a function that has not been defined, a fatal run-time error would be raised.
 
@@ -9,7 +11,6 @@ function foo() {
 }
 boo(); // undefined function 'boo'
 ?>
-
 
 
 Warning errors (E_WARNING | Code 2)
@@ -35,3 +36,38 @@ if(isset($b)){
     trigger_error('$b is not yet');
 }
 ?>
+
+
+PHP - Error Types
+Notice — (undefined variable)
+Warning — (file not found)
+Fatal Error —  (function not found)
+
+
+
+
+Why Try-Catch is Used:
+To prevent program crash
+To handle errors properly
+To display user-friendly error messages
+To continue program execution
+Alternative code run
+
+Try → Contains risky code
+Catch → Handles the error (exception)
+Finally → Always executes whether an error occurs or not
+
+Exception → Class
+$e → Object
+getMessage() → Method
+
+
+try {
+   // Code that may cause exception
+}
+catch(Exception $e) {
+   // Handle exception
+}
+finally {
+   // Always execute
+}

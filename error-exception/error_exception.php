@@ -1,7 +1,7 @@
 <?php
 // Definition and Usage
 // The Exception() constructor is used to create an Exception object and set some of its properties.
-
+//Exception = Runtime Error / Unexpected Problem
 // Syntax
 // new Exception(message, code, previous)
 // getMessage — Gets the Exception message
@@ -30,17 +30,29 @@
 $a = 10;
 
 
-try{ 
-if ($a<30){ 
- throw new Exception("valid Number"); 
-}else { 
-    throw new Exception("invalid Number");
-}
-}
-catch(Exception $e){ 
-    echo "Your error is:".$e->getMessage()."<br>";
-}
-finally{ 
+try {
+    if ($a < 30) {
+        throw new Exception("valid Number");
+    } else {
+        throw new Exception("invalid Number");
+    }
+} catch (Exception $e) {
+    echo "Your error is:" . $e->getMessage() . "<br>";
+} finally {
     echo "This is finally done my work";
 }
-?>
+
+
+try {
+    $age = -5;
+
+    if ($age < 0) {
+        throw new Exception("Age cannot be negative");
+    }
+
+    echo "Valid Age";
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+} finally {
+    echo "<br>Program Finished";
+}
