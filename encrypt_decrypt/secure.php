@@ -1,40 +1,15 @@
-<!-- PHP md5(), sha1(), hash() Functions,base64_encode,base64_decode -->
+<!-- <!-- PHP md5() ->convart to 128-bit hash
+ , sha1() ->convart 160-bit hash,
+  -->
 
-<?php 
-$password = "admin";
+<?php
+$password = "123";
 //md5()
-$m = md5($password);
-echo $m;
+echo md5($password);
 echo "<br>";
-echo strlen($m);
 
-echo "<br>";
-//sha1(),
-$m = sha1($password);
-echo $m;
-echo "<br>";
-echo strlen($m);
+echo hash('SHA512', "admin@");
 
 
-echo "<br>";
-//hash()
-$m = hash('sha1','this is admin');
-echo $m;
-echo "<br>";
-echo strlen($m);
-
-
-
-echo "<br>";
-//base64_encode(),
-$m = base64_encode($password);
-echo $m;
-echo "<br>";
-echo strlen($m);
-
-
-echo "<br>";
- echo base64_decode("YWRtaW4=");
 
 ?>
-

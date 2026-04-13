@@ -1,0 +1,69 @@
+SHA Algorithms Table
+Algorithm	Hash Length	Security	    Speed	        Use
+md5()       128-bit 
+SHA1	    160 bit	    Weak	        Fast	        Old system
+SHA224	    224 bit	    ⭐⭐	         Fast	     Medium security
+SHA256	    256 bit	    ⭐⭐⭐⭐	  Medium	      Most popular
+SHA384	    384 bit	    ⭐⭐⭐⭐⭐	 Slow	     High security
+SHA512	    512 bit	    ⭐⭐⭐⭐⭐⭐	Slow	   Very high security
+
+
+
+
+hash(algorithm, data);
+
+
+Example:
+SHA1
+echo hash("sha1","hello");
+
+Output:
+
+aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+SHA224
+echo hash("sha224","hello");
+
+Output:
+
+ea09ae9cc6768c50fcee903ed054556e5bfc8347907f12598aa24193
+SHA256
+echo hash("sha256","hello");
+
+Output:
+
+2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+SHA384
+echo hash("sha384","hello");
+
+
+
+
+$data = "Hello World";
+$key = "secret123";
+$method = "AES-128-CTR";
+
+// Encrypt
+$encrypted = openssl_encrypt($data, $method, $key);
+
+// Decrypt
+$decrypted = openssl_decrypt($encrypted, $method, $key);
+
+echo "Original: ".$data."<br>";
+echo "Encrypted: ".$encrypted."<br>";
+echo "Decrypted: ".$decrypted;
+
+Encryption →do decrypt  
+Hashing → do not decrypt
+
+password_hash("123456", PASSWORD_DEFAULT);
+
+$password = "123456";
+
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
+any system to decrypt?
+
+yes: if 
+same algorithm
+same key
+same IV (IV = Initialization Vector)
