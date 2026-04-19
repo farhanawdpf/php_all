@@ -1,13 +1,13 @@
-<?php 
-$db = new mysqli('localhost','root','','company');
+<?php
+$db = new mysqli('localhost', 'root', '', 'company');
 
-if(isset($_POST['btnSubmit'])){
+if (isset($_POST['btnSubmit'])) {
 	$mname = $_POST['mname'];
 	$contact = $_POST['contact'];
 	$db->query(" call add_manufacture('$mname','$contact') ");
 }
 
-if(isset($_POST['addProduct'])){
+if (isset($_POST['addProduct'])) {
 	$pname = $_POST['pname'];
 	$price = $_POST['price'];
 	$mid = $_POST['manufac'];
@@ -27,7 +27,7 @@ if(isset($_POST['addProduct'])){
 			<td><label for="contact">Contact</label></td>
 			<td><input type="text" name="contact" /></td>
 		</tr>
-		<tr> 
+		<tr>
 			<td></td>
 			<td><input type="submit" name="btnSubmit" value="submit" /></td>
 		</tr>
@@ -49,16 +49,16 @@ if(isset($_POST['addProduct'])){
 			<td><label for="manufac">Manufacturer Name</label></td>
 			<td>
 				<select name="manufac">
-					<?php 
-						$manufac = $db->query("select * from manufacturer");
-						while(list($_mid,$_mname) = $manufac->fetch_row()){
-							echo "<option value='$_mid'>$_mname</option>";
-						}
+					<?php
+					$manufac = $db->query("select * from manufacturer");
+					while (list($_mid, $_mname) = $manufac->fetch_row()) {
+						echo "<option value='$_mid'>$_mname</option>";
+					}
 					?>
 				</select>
 			</td>
 		</tr>
-		<tr> 
+		<tr>
 			<td></td>
 			<td><input type="submit" name="addProduct" value="submit" /></td>
 		</tr>
@@ -68,7 +68,7 @@ if(isset($_POST['addProduct'])){
 
 <h3>View Product</h3>
 
-<table border="1" style="border-collapse: collapse;" > 
+<table border="1" style="border-collapse: collapse;">
 	<tr>
 		<th>ID</th>
 		<th>Name</th>
@@ -76,24 +76,14 @@ if(isset($_POST['addProduct'])){
 		<th>Manufacturer</th>
 		<th>Contact</th>
 	</tr>
-	<?php 
-		$product = $db->query(" select * from view_product ");
-		while(list($_id,$_name,$_price,$_mname,$_mcont) = $product->fetch_row()){
-			echo "<tr> 
-					<td>$_id</td>
-					<td>$_name</td>
-					<td>$_price</td>
-					<td>$_mname</td>
-					<td>$_mcont</td>
+	<?php
+	$product = $db->query(" select * from view_show_data");
+	while (list($_n, $_e,) = $product->fetch_row()) {
+		echo "<tr> 
+					<td>$_n</td>
+					<td>$_e</td>
 				</tr>";
-		}
-	
+	}
+
 	?>
 </table>
-
-
-
-
-
-
-

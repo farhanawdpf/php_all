@@ -1,6 +1,6 @@
-<h1> 
+<h1>
 
-<pre> 
+    <pre>
 The MySQLi functions allows you to access MySQL database servers.
 Procedural style:
 mysqli_connect(host, username, password, dbname, port, socket)
@@ -9,13 +9,14 @@ MySQLi extension (the "i" stands for improved)
 </pre>
 </h1>
 
-<?php 
+<?php
 
-$conn= mysqli_connect("localhost","root","","new_database");
+$conn = mysqli_connect("localhost", "root", "", "batch-370");
 
-
-if(!$conn){ 
-die("Connection Failed.");
+if (!$conn) {
+    echo "error";
 }
-echo "connection successfully";
+echo "successfully connected";
+
+
 ?>
