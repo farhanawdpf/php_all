@@ -49,6 +49,71 @@ p.name,p.price,m.name manme,
 m.contact from product p, manufacturer m where m.id=p.manufac_id ;
 
 
+CREATE VIEW view_name AS
+SELECT fieldName1, fieldName2, fieldName3
+FROM tableName
+WHERE condition;
+
+
+
+condition:
+=========
+
+
+WHERE contact LIKE '017%';
+
+WHERE email LIKE '%@gmail.com';
+
+WHERE contact LIKE '017%'
+AND email IS NOT NULL;
+
+
+
+WHERE name LIKE 'Rah%';
+
+WHERE name LIKE '%Ali%';
+
+
+
+
+
+| Condition  | Query               |
+| ---------- | ------------------- |
+| Same name  | `name='Rahim'`      |
+| Start with | `name LIKE 'Rah%'`  |
+| End with   | `name LIKE '%Ali'`  |
+| Anywhere   | `name LIKE '%Ali%'` |
+
+
+
+
+
+
+
+
+
+
+
+
+delimiter //
+
+drop procedure if exists add_product //
+create procedure add_product(pname varchar(20),price double(10,2),m_id int(10))
+begin 
+insert into product(name,price,manufac_id)values(pname,price,m_id);
+end //
+
+delimiter ;
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-use company;
+use company2;
 
 drop table if exists manufacturer;
 create table manufacturer(
