@@ -115,14 +115,14 @@ if (isset($_POST['delmanufact'])) {
 		<th>Contact</th>
 	</tr>
 	<?php
-	$product = $db->query(" select * from view_product ");
-	while (list($_name, $_price, $_mname, $_mcont) = $product->fetch_row()) {
+	$product = $db->query(" select * from  products");
+	while (list($_name, $_price, $_mname) = $product->fetch_row()) {
 		echo "<tr> 
 			
 					<td>$_name</td>
 					<td>$_price</td>
 					<td>$_mname</td>
-					<td>$_mcont</td>
+					
 				</tr>";
 	}
 
