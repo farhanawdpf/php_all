@@ -4,10 +4,11 @@ $db = mysqli_connect("localhost", "root", "", "batch-m70");
 if (isset($_POST['btnsubmit'])) {
     $_n = $_POST['fname'];
     $_c = $_POST['contact'];
+    $brand_id = $_POST['brand_id'];
     $image = $_FILES['image']['name'];
     $tmp = $_FILES['image']['tmp_name'];
     move_uploaded_file($tmp, "uploads/" . $image);
-    $q = "INSERT INTO users (name,contact,f_image)VALUES('$_n','$_c', '$image')";
+    $q = "INSERT INTO users (name,contact,f_image,brand_id)VALUES('$_n','$_c', '$image','$brand_id')";
     if (mysqli_query($db, $q) == true) {
         header("Location:view.php");
         exit();
@@ -41,6 +42,16 @@ if (isset($_POST['btnsubmit'])) {
                 <label for="exampleFormControlInput1" class="form-label">Contact</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Contact"
                     name="contact">
+                <div class="mb-3">
+                    <select name="brand_id">
+                        <?php
+                        $manufac = $db->query("select * from brand");
+                        while (list($_mid, $_mname) = $manufac->fetch_row()) {
+                            echo "<option value='$_mid'>$_mname</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">File Upload</label>
                     <input type="file" class="form-control" name="image" id="exampleFormControlInput1"

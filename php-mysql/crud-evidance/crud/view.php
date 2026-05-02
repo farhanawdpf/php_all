@@ -9,6 +9,33 @@ if (isset($_GET['viedt'])) {
         header('location:view.php');
     }
 }
+
+// $con_table = $db->query("select i.id, i.barcode,i.name,t.name,u.name,c.name,i.manufacturer,i.description,i.photo from item i,item_category c,item_type t,item_uom u where c.id=i.category_id and t.id=i.type_id and u.id=i.uom_id order by i.id desc");
+
+// echo "<table class='table'>";
+// echo "<tr><th>Id</th><th>Barcode</th><th>Name</th><th>Type</th><th>UoM</th><th>Category</th><th>Manufacturer</th><th>Description</th></tr>";
+
+// while (list($id, $barcode, $item_name, $type, $uom, $category, $mfg, $desc, $photo) = $con_table->fetch_row()) {
+
+//     //$added_on=date("d M Y h:i A",strtotime($added_on));
+
+
+//     echo "<tr><td>$id</td><td>$barcode</td><td>$item_name</td><td>$type</td><td>$uom</td><td>$category</td><td>$mfg</td><td>$desc</td><td><img src='img/$photo' height='50' /></td></tr>";
+// }
+
+// echo "</table>";
+
+//         $sql = "SELECT products.*, brand.name AS brand_name 
+// FROM products 
+// JOIN brand ON products.brand_id = brand.id";
+
+//         $result = mysqli_query($conn, $sql);
+
+//         while ($row = mysqli_fetch_assoc($result)) {
+//             echo $row['name'] . " - " . $row['price'] . " - " . $row['brand_name'];
+//             echo "<br><img src='uploads/" . $row['product_image'] . "' width='100'><br>";
+//         }
+
 ?>
 
 
@@ -39,17 +66,19 @@ if (isset($_GET['viedt'])) {
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Image</th>
+                    <th>brand id</th>
                     <th>Action</th>
                 </tr>
                 <?php
                 $u = $db->query(" select * from users");
-                while (list($_id, $n, $c, $img) = $u->fetch_row()) {
+                while (list($_id, $n, $c, $img, $i) = $u->fetch_row()) {
                     echo "<tr>
 
                     <td>$_id</td>
                     <td>$n</td>
                     <td>$c</td>
-                     <td><img src='uploads/$img' width='80'></td>
+                    <td><img src='uploads/$img' width='80'></td>
+                    <td>$i</td>
                     <td>
                     <span class='btn btn-danger'>
                          <a href='view.php?viedt=$_id' class='text-white text-decoration-none'>Delete</a>
